@@ -36,7 +36,20 @@ def main() -> None:
     # Get the dispatcher to register handlers
     dispatcher = updater.dispatcher
 
-    # Register command handlers
+def delete_all_messages(update, context):
+    chat_id = update.effective_chat.id
+
+    # Get the last message ID in the chat
+    last_message_id = context.bot.get_chat(chat_id).last_message.message_id
+
+    # Delete messages in batches until all messages are deleted
+    while last_message_id:
+        context.bot.delete_message(chat_id, last_message_id)
+        last_message_id -= 1
+
+    context.bot.send_message(chat_id=chat_id, text="All messages have been deleted!")
+
+dispatcher.add_handler(CommandHandler("deleteall", delete_all_messages))
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(MessageHandler(Filters.document, file_message))
 

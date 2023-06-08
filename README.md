@@ -13,7 +13,7 @@ function shortenURL() {
 }
 
 function generateUniqueID() {
-  // Generate a random alphanumeric string as a unique identifier
+  // Generate random alphanumeric string as a unique identifier
   var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
   var id = "";
   for (var i = 0; i < 6; i++) {

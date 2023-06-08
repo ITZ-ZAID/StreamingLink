@@ -8,7 +8,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 # Telegram bot token
-TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN'
+TOKEN = '6159975062:AAHL-Mhi6g5aPYOPmgvywDEvZuGCt5c_hMw'
 
 # Command handler for the start command
 def start(update: Update, context: CallbackContext) -> None:

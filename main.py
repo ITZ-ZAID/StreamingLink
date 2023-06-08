@@ -27,15 +27,6 @@ def file_message(update: Update, context: CallbackContext) -> None:
     # Share the streaming link
     update.message.reply_text(f"Streaming link: {streaming_link}")
 
-# Main function
-def main() -> None:
-    """Run the bot."""
-    # Create the Updater and pass it the bot token
-    updater = Updater(TOKEN)
-
-    # Get the dispatcher to register handlers
-    dispatcher = updater.dispatcher
-
 def delete_all_messages(update, context):
     chat_id = update.effective_chat.id
 
@@ -48,6 +39,15 @@ def delete_all_messages(update, context):
         last_message_id -= 1
 
     context.bot.send_message(chat_id=chat_id, text="All messages have been deleted!")
+
+# Main function
+def main() -> None:
+    """Run the bot."""
+    # Create the Updater and pass it the bot token
+    updater = Updater(TOKEN)
+
+    # Get the dispatcher to register handlers
+    dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler("deleteall", delete_all_messages))
     dispatcher.add_handler(CommandHandler("start", start))

@@ -49,7 +49,7 @@ def delete_all_messages(update, context):
 
     context.bot.send_message(chat_id=chat_id, text="All messages have been deleted!")
 
-dispatcher.add_handler(CommandHandler("deleteall", delete_all_messages))
+     dispatcher.add_handler(CommandHandler("deleteall", delete_all_messages))
     dispatcher.add_handler(CommandHandler("start", start))
     dispatcher.add_handler(MessageHandler(Filters.document, file_message))
 

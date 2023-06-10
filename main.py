@@ -7,6 +7,6 @@ def bypass_url_shortener(short_url):
     return final_url
 
 # Example usage
-shortened_url = "https://bit.ly/ABC123"
+shortened_url = "https://m.easysky.in/8Fy18F"
 final_url = bypass_url_shortener(shortened_url)
 print("Final URL:", final_url)
